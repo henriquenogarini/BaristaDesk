@@ -1,52 +1,25 @@
 package br.com.baristaDesk.model;
 
-public class Product {
-    private String name;
-    private String description;
+
+public class Product extends Item {
     private String category;
-    private double price;
     private int stockQuantity;
     private String productId;
 
     public Product(String name, String description, String category, double price, int stockQuantity, String productId) {
-       this.name = name;
-       this.description = description;
+       super(name, description, price);
        this.category = category;
-       this.price = price;
        this.stockQuantity = stockQuantity;
        this.productId = productId;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
+    @Override
     public String getCategory() {
         return category;
     }
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public int getStockQuantity() {
@@ -68,10 +41,10 @@ public class Product {
     @Override
     public String toString() {
         return "Product [ID=" + productId +
-                ", Name=" + name +
-                ", Description=" + description +
+                ", Name=" + getName() +
+                ", Description=" + getDescription() +
                 ", Category=" + category +
-                ", Price=" + price +
+                ", Price=" + getPrice() +
                 ", Stock=" + stockQuantity + "]";
     }
 }

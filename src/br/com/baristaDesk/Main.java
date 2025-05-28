@@ -9,6 +9,5 @@ public class Main {
 
         // Display product details
         System.out.println("Product 1: " + product1);
-
     }
 }
